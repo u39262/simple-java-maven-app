@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('SonarQube Analysis') {
       steps {
-        withSonarQubeEnv('SonarQubeServer') {
+        withMaven(maven: 'Apache Maven 3.5.4') {
           sh "mvn sonar:sonar"
         }
 
