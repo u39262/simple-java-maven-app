@@ -4,12 +4,12 @@ pipeline {
     stage('SonarQube Analysis') {
       agent any
       steps {
-//        withSonarQubeEnv(installationName: 'SonarQubeServer') {
+        withSonarQubeEnv(installationName: 'SonarQubeServer') {
           withMaven(maven: 'Apache Maven 3.5.4') {
             sh 'mvn sonar:sonar'
           }
 
-//        }
+        }
 
       }
     }
