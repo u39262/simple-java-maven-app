@@ -4,7 +4,9 @@ pipeline {
     stage('Build') {
       steps {
         //fileExists 'pom.xml'
-        sh 'mvn clean package'
+        withMaven(maven: 'Apache Maven 3.5.4') {
+          sh 'mvn clean package'
+        }
       }
     }
   }
