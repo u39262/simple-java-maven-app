@@ -1,6 +1,13 @@
 pipeline {
   agent any
   stages {
+    stage('SonarQube Analysis') {
+      steps {
+        withSonarQubeEnv('SonarQube Server') {
+          sh 'sonar-scanner'
+        }
+      }
+    }
     stage('Build') {
       steps {
         //fileExists 'pom.xml'
