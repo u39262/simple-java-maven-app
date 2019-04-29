@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        fileExists 'pom.xml'
+        //fileExists 'pom.xml'
         sh 'mvn clean package'
       }
     }
